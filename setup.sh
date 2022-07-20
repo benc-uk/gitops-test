@@ -13,7 +13,7 @@ GIT_NAME=gitops-test
 
 # Also change these
 KUST_NAME=demo-env
-KUST_PATH=./envs/demo
+KUST_PATH=./envs/
 KUST_INTERVAL=2m
 
 # Check we have Flux CLI
