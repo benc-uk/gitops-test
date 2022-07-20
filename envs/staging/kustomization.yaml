@@ -8,10 +8,13 @@ resources:
   - ../../base
 
 # Staging environment specific configuration
+
+# Set the mongo image to be v5
 images:
   - name: mongo
     newTag: "5.0"
 
+# Increase the memory on the webapp
 patches:
   - patch: |-
       - op: replace

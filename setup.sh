@@ -12,7 +12,7 @@ GIT_BRANCH=main
 GIT_NAME=gitops-test
 
 # Also change these
-KUST_NAME=demo-env
+KUST_NAME=environments
 KUST_PATH=./envs/
 KUST_INTERVAL=2m
 
