@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  labels:
+    environment: staging
+spec:
+  template:
+    spec:
+      containers:
+        - name: webapp
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "700m"

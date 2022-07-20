@@ -9,17 +9,23 @@ resources:
 
 # Staging environment specific configuration
 
-# Set the mongo image to be v5
+# Set the mongo image to be v5.0
 images:
   - name: mongo
     newTag: "5.0"
 
 # Increase the memory on the webapp
+patchesStrategicMerge:
+  - ./patch-webapp.yaml
+
+# Label all pods as staging
 patches:
   - patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/resources/limits/memory
-        value: "256Mi"
+      - op: add
+        path: /spec/template/metadata/labels/environment
+        value: "staging"
+      - op: add
+        path: /metadata/labels/environment
+        value: "staging"        
     target:
       kind: Deployment
-      name: webapp
